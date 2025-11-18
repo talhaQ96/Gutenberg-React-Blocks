@@ -1,0 +1,149 @@
+@use '../../src/scss/partials/variables' as *;
+@use '../../src/scss/partials/mixins' as *;
+
+.section-testimonials {
+	&.has-alt-bg {
+		background-color: $color-alt-background;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: 20px;
+		margin-bottom: 70px;
+
+		@include breakpoint (sm-tablet, max) {
+			flex-direction: column;
+			align-items: start;
+		}
+
+		&-button {
+			flex-shrink: 0;
+		}
+	}
+
+	&__slider {
+		display: grid;
+		grid-gap: 30px;
+
+		@include breakpoint (sm-tablet, min) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoint (desktop, min) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.testimonial {
+			padding: 20px;
+			background-color: $color-primary;
+			border-radius: 3px;
+			color: $color-white;
+
+			&__header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			&__platform {
+				width: 50px;
+				height: 50px;
+			}
+
+			&__stars {
+				display: flex;
+				gap: 10px;
+			}
+
+			&__badge {
+				display: flex;
+				align-items: center;
+				gap: 5px;
+				margin-bottom: 15px;
+				font-size: $font-size-xs;
+				font-weight: $font-weight-semi-bold;
+			}
+
+			&__body {
+				margin-top: 30px;
+				margin-bottom: 30px;
+				font-size: $font-size-sm;
+				line-height: $line-height-lg;
+			}
+
+			&__footer {
+				display: flex;
+				align-items: center;
+				gap: 20px;
+
+				img {
+					border-radius: 50%;
+				}
+			}
+
+			&__name {
+				margin-bottom: 0;
+			}
+
+			.icon {
+				&--star {
+					width: 25px;
+
+					svg {
+						fill: #F8C171;
+					}
+				}
+
+				&--verified-badge {
+					width: 28px;
+					height: 28px;
+				}
+			}
+
+			&.slick-slide {
+				margin-left: 15px;
+				margin-right: 15px;
+
+				@include breakpoint (tablet, max) {
+					margin-left: 10px;
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+
+	&__slider-nav {
+		display: flex;
+		justify-content: center;
+		gap: 30px;
+		margin-top: 50px;
+
+		@include breakpoint (sm-tablet, max) {
+			gap: 20px;
+		}
+
+		&-prev,
+		&-next {
+			width: 70px;
+			height: 70px;
+			background-color: $color-accent;
+			border-radius: 50%;
+			transition: $transition;
+
+			@include breakpoint (sm-tablet, max) {
+				width: 55px;
+				height: 55px;
+			}
+
+			&:hover {
+				background-color: $color-primary;
+			}
+		}
+
+		&-prev {
+			transform: rotate(180deg);
+		}
+	}
+}

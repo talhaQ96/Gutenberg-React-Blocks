@@ -1,0 +1,87 @@
+@use '../../src/scss/partials/variables' as *;
+@use '../../src/scss/partials/mixins' as *;
+
+.section-hero {
+	background-color: $color-primary;
+
+	@include breakpoint (tablet, min) {
+		min-height: 100vh;
+	}
+
+	&__container {
+		color: $color-white;
+
+		@include breakpoint (tablet, min) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			min-height: 100vh;
+		}
+	}
+
+	&__text-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		max-width: 1000px;
+		padding: 130px 40px 40px;
+
+		.section-title {
+			color: #F8C171
+		}
+
+		@include breakpoint (lg-phone, max) {
+			padding: 140px 25px 50px;
+		}
+	}
+
+	&__description {
+		font-size: $font-size-lg;
+		font-weight: $font-weight-semi-bold;
+		line-height: $line-height-lg;
+
+		@include breakpoint (lg-phone, max) {
+			font-size: $font-size-md;
+			line-height: $line-height-md;
+		}
+	}
+
+
+	&__buttons-wrapper {
+		margin-top: 50px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+
+		.button {
+			border: 1px solid transparent;
+		}
+
+		.button:hover {
+			background-color: $color-black;
+			border-color: $color-white;
+		}
+	}
+
+	&__img-wrapper {
+		position: relative;
+		height: 100%;
+
+		@include breakpoint (tablet, max) {
+			height: 50vh;
+		}
+
+		img {
+			position: absolute;
+			inset: 0;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+
+			@include breakpoint (tablet, max) {
+				@include breakpoint (lg-phone, min) {
+					object-position: 0 -50px;
+				}
+			}
+		}
+	}
+}

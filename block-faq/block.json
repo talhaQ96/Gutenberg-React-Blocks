@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "capify/block-faq",
+  "title": "FAQs",
+  "description": "Add a list of questions and answers to address common customer concerns.",
+  "category": "widgets",
+  "icon": "editor-help",
+  "keywords": ["faq", "questions", "answers", "accordion", "toggle"],
+  "version": "1.0.0",
+  "textdomain": "capify",
+  "attributes": {
+    "sectionTitle": {"type": "string", "default": ""},
+    "sectionDescription": {"type": "string", "default": ""},
+    "buttonURL": {"type": "string", "default": ""},
+    "buttonText": {"type": "string", "default": ""},
+    "faqs": {"type": "array", "default": []},
+    "sectionPaddingTop": { "type": "string", "default": "none" },
+    "sectionPaddingBottom": { "type": "string", "default": "none" }
+  },
+  "editorScript": "file:../../build/block-faq/index.js",
+  "editorStyle": "file:../../build/block-faq/editor.css",
+  "style": "file:../../build/block-faq/styles.css",
+  "render": "file:./render.php"
+}

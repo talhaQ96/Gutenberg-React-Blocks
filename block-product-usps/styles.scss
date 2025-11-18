@@ -1,0 +1,55 @@
+@use '../../src/scss/partials/variables' as *;
+@use '../../src/scss/partials/mixins' as *;
+
+.section-product-usps {
+	&__grid {
+		display: grid;
+		gap: 100px;
+		align-items: center;
+
+		@include breakpoint (laptop, max) {
+			gap: 40px;
+		}
+
+		@include breakpoint (tablet, min) {
+			grid-template-columns: 1fr 1.25fr;
+		}
+	}
+
+	&__header {
+		margin-bottom: 70px;
+		max-width: 1200px;
+	}
+
+	.product-usps {
+		display: grid;
+		gap: 40px;
+
+		@include breakpoint (laptop, min) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 60px 30px;
+		}
+
+		@include breakpoint (tablet, max) {
+			@include breakpoint (lg-phone, min) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		&__wrapper {
+			display: flex;
+			gap: 15px;
+		}
+
+		.icon--star {
+			flex-shrink: 0;
+			width: 25px;
+			height: 25px;
+			margin-top: 6px;
+		}
+
+		&__text {
+			margin-bottom: 0;
+		}
+	}
+}

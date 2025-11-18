@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "capify/block-testimonials",
+  "title": "Testimonials",
+  "description": "Showcase customer feedback in a slider or grid format.",
+  "category": "widgets",
+  "icon": "testimonial",
+  "keywords": ["testimonial", "review", "feedback", "customer"],
+  "version": "1.0.0",
+  "textdomain": "capify",
+  "attributes": {
+    "sectionTitle": {"type": "string", "default": ""},
+    "sectionDescription": {"type": "string", "default": ""},
+    "buttonURL": {"type": "string", "default": ""},
+    "buttonText": {"type": "string", "default": ""},
+    "isSliderEnable":{"type": "boolean", "default": false},
+    "isAltBGEnable":{"type": "boolean", "default": false},
+    "sectionPaddingTop": { "type": "string", "default": "none" },
+    "sectionPaddingBottom": { "type": "string", "default": "none" }
+  },
+  "editorScript": "file:../../build/block-testimonials/index.js",
+  "editorStyle": "file:../../build/block-testimonials/editor.css",
+  "style": "file:../../build/block-testimonials/styles.css",
+  "render": "file:./render.php"
+}

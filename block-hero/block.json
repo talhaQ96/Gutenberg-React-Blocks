@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "capify/block-hero",
+  "title": "Hero",
+  "description": "Create a powerful first impression with a customizable hero section.",
+  "category": "widgets",
+  "icon": "cover-image",
+  "keywords": ["hero", "banner", "cover", "header"],
+  "version": "1.0.0",
+  "textdomain": "capify",
+  "attributes": {
+    "layoutType": {"type": "string", "default": "split"},
+    "sectionTitle": {"type": "string", "default": ""},
+    "sectionDescription": {"type": "string", "default": ""},
+    "buttons": {"type": "array", "default": []},
+    "imageUrl": {"type": "string", "default": ""}
+  },
+  "editorScript": "file:../../build/block-hero/index.js",
+  "editorStyle": "file:../../build/block-hero/editor.css",
+  "style": "file:../../build/block-hero/styles.css",
+  "render": "file:./render.php"
+}

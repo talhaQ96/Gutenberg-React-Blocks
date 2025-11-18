@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "capify/block-product-usps",
+  "title": "Product USPs",
+  "description": "Showcase key features or unique selling points of a product.",
+  "category": "widgets",
+  "icon": "star-filled",
+  "keywords": ["usp", "features", "benefits", "selling points"],
+  "version": "1.0.0",
+  "textdomain": "capify",
+  "attributes": {
+    "layoutType": {"type": "string", "default": "split"},
+    "sectionTitle": {"type": "string", "default": ""},
+    "sectionDescription": {"type": "string", "default": ""},
+    "buttonURL": {"type": "string", "default": ""},
+    "buttonText": {"type": "string", "default": ""},
+    "imageUrl": {"type": "string", "default": ""},
+    "productUSPs": {"type": "array", "default": []},
+    "sectionPaddingTop": { "type": "string", "default": "none" },
+    "sectionPaddingBottom": { "type": "string", "default": "none" }
+  },
+  "editorScript": "file:../../build/block-product-usps/index.js",
+  "editorStyle": "file:../../build/block-product-usps/editor.css",
+  "style": "file:../../build/block-product-usps/styles.css",
+  "render": "file:./render.php"
+}
